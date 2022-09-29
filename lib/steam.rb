@@ -17,7 +17,7 @@ require 'steam/errors/api_error'
 
 require 'steam/requestors/base'
 require 'steam/requestors/app_news'
-require 'steam/requestors/player_summary'
+require 'steam/requestors/player_summaries'
 
 require 'steam/structs/types'
 require 'steam/structs/base'
@@ -28,7 +28,7 @@ require 'steam/structs/player_summaries'
 
 require 'steam/structs/requests/abstract'
 require 'steam/structs/requests/get_app_news'
-require 'steam/structs/requests/get_player_summary'
+require 'steam/structs/requests/get_player_summaries'
 
 require 'steam/client'
 

@@ -39,7 +39,7 @@ module Steam
       @api_token = api_token
 
       @app_news ||= Steam::Requestors::AppNews.new(self)
-      @player_summary ||= Steam::Requestors::PlayerSummary.new(self)
+      @player_summary ||= Steam::Requestors::PlayerSummaries.new(self)
     end
 
     # Return the client config values
