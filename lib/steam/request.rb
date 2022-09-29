@@ -41,7 +41,7 @@ module Steam
 
     def query_params
       all_params = {}.tap do |params|
-        params[:key] = client.api_token
+        params[:key] = client.api_token if request_struct.needs_authorization?
         params.merge!(request_struct.query_params)
       end
 

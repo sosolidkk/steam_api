@@ -1,51 +1,57 @@
 module Steam
   module Structs
     module Requests
-      # @abstract class for a Request's struct
-      class Abstract < Steam::Structs::Base
+      class GetAppNews < Abstract
+        attribute :appid, Types::Integer
+        attribute :count, Types::Integer
+        attribute :maxlength, Types::Integer
+
+        def self.build_from_params(params)
+          %i[appid count maxlength].each do |attrib|
+            raise StandardError, "#{attrib} is missing" unless params.key?(attrib)
+          end
+
+          new(params)
+        end
+
         # Returns the version value to create the request path
-        # @abstract
         # @return [String] the version of the request path
         def version
-          raise NotImplementedError, 'Override this method'
+          'v0002/'
         end
 
         # Returns the interface value to create the request path
-        # @abstract
         # @return [String] the interface of the request path
         def interface
-          raise NotImplementedError, 'Override this method'
+          'ISteamNews/'
         end
 
         # Returns the API path value to create the request path
-        # @abstract
         # @return [String] the API path of the request path
         def path
-          raise NotImplementedError, 'Override this method'
-        end
-
-        # Returns the HTTP method used by the request.
-        # @return [Symbol]
-        def method
-          :get
+          'GetNewsForApp/'
         end
 
         # Returns the query params needed for the HTTP request
         # @return [Hash]
         def query_params
-          {}
+          {
+            appid: appid,
+            count: count,
+            maxlength: maxlength
+          }
         end
 
         # Return the class attributes as a Hash
         # @return [Hash]
         def body
-          as_json.deep_symbolize_keys
+          {}
         end
 
         # Tells if the request needs the api_token in the query params
         # @return [Boolean]
         def needs_authorization?
-          true
+          false
         end
       end
     end

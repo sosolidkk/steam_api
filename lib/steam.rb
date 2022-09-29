@@ -16,14 +16,18 @@ require 'steam/failure_handler'
 require 'steam/errors/api_error'
 
 require 'steam/requestors/base'
+require 'steam/requestors/app_news'
 require 'steam/requestors/player_summary'
 
 require 'steam/structs/types'
 require 'steam/structs/base'
+require 'steam/structs/app_new'
+require 'steam/structs/app_news'
 require 'steam/structs/player_summary'
 require 'steam/structs/player_summaries'
 
 require 'steam/structs/requests/abstract'
+require 'steam/structs/requests/get_app_news'
 require 'steam/structs/requests/get_player_summary'
 
 require 'steam/client'
