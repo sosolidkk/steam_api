@@ -1,0 +1,122 @@
+---
+
+# References:
+# https://docs.rubocop.org/rubocop/index.html
+# https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
+
+AllCops:
+  Exclude:
+    - 'spec/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'db/seeds.rb'
+    - 'config/routes.rb'
+    - 'bundle/**/*'
+  # Style guide URLs are not displayed in offense messages by default. Change
+  # behavior by overriding `DisplayStyleGuide`, or by giving the
+  # `-S/--display-style-guide` option.
+  DisplayStyleGuide: true
+  # What MRI version of the Ruby interpreter is the inspected code intended to
+  # run on? (If there is more than one, set this to the lowest version.)
+  # If a value is specified for TargetRubyVersion then it is used. Acceptable
+  # values are specificed as a float (i.e. 2.5); the teeny version of Ruby
+  # should not be included. If the project specifies a Ruby version in the
+  # .ruby-version file, Gemfile or gems.rb file, RuboCop will try to determine
+  # the desired version of Ruby by inspecting the .ruby-version file first,
+  # followed by the Gemfile.lock or gems.locked file. (Although the Ruby version
+  # is specified in the Gemfile or gems.rb file, RuboCop reads the final value
+  # from the lock file.) If the Ruby version is still unresolved, RuboCop will
+  # use the oldest officially supported Ruby version (currently Ruby 2.4).
+  TargetRubyVersion: 2.6
+
+# Cops configurations (only what's different from defaults)
+
+# http://docs.rubocop.org/rubocop/cops_bundler.html#bundlerorderedgems
+Bundler/OrderedGems:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutlinelength
+Layout/LineLength:
+  Max: 120
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutdotposition
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutspacearoundequalsinparameterdefault
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutspaceinlambdaliteral
+Layout/SpaceInLambdaLiteral:
+  EnforcedStyle: require_space
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutspaceinsidehashliteralbraces
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+
+# https://docs.rubocop.org/rubocop/cops_style.html#styledocumentation
+Style/Documentation:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_style.html#styledocumentationmethod
+Style/DocumentationMethod:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_style.html#stylefrozenstringliteralcomment
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_style.html#styleargumentsforwarding
+Style/ArgumentsForwarding:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_style.html#stylecollectioncompact
+Style/CollectionCompact:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_style.html#styledocumentdynamicevaldefinition
+Style/DocumentDynamicEvalDefinition:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_style.html#stylenegatedifelsecondition
+Style/NegatedIfElseCondition:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_style.html#styleswapvalues
+Style/SwapValues:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_lint.html#lintduplicateregexpcharacterclasselement
+Lint/DuplicateRegexpCharacterClassElement:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_lint.html#lintemptyblock
+Lint/EmptyBlock:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_lint.html#lintnoreturninbeginendblocks
+Lint/NoReturnInBeginEndBlocks:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_lint.html#linttoenumarguments
+Lint/ToEnumArguments:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_lint.html#lintunmodifiedreduceaccumulator
+Lint/UnmodifiedReduceAccumulator:
+  Enabled: true
+
+Lint/DuplicateBranch: # (new in 1.3)
+  Enabled: true
+
+Lint/EmptyClass: # (new in 1.3)
+  Enabled: true
+
+Style/NilLambda: # (new in 1.3)
+  Enabled: true
+
+Style/RedundantArgument: # (new in 1.4)
+  Enabled: true
