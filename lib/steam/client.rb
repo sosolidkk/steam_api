@@ -20,17 +20,24 @@ module Steam
   #   vdf - Output is returned as a VDF file.
   # If you do not specify a format, your results will be returns in the JSON format.
   class Client
-    extended ::Dry::Configurable
+    extend ::Dry::Configurable
 
     BASE_ENDPOINT = 'https://api.steampowered.com'
 
     setting :api_token
+
+    attr_accessor :api_token
+
+    attr_reader \
+      :player_summary
 
     # Initialize the client
     # @param [String] api_token - An existing api token.
     # @return [Steam::Client] - A new class instance.
     def initialize(api_token=nil)
       @api_token = api_token
+
+      @player_summary ||= Steam::Requestors::PlayerSummary.new(self)
     end
 
     # Return the client config values

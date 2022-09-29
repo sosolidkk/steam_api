@@ -1,7 +1,7 @@
 module Steam
   # Class that checks an Api response and raise the correct exception
   class FailureHandler
-    include ::Singleton
+    include Singleton
 
     # Perform the check
     # @param [Steam::Response] the response received from the Api

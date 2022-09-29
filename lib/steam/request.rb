@@ -21,17 +21,31 @@ module Steam
 
     private
 
+    attr_accessor :request_struct, :response_struct, :client, :raw_request, :failure_handler
+
     def build_request
       @raw_request = ::Typhoeus::Request.new(url, build_options)
     end
 
     def url
-      <<~URL.squish
-        #{client.base_endpoint}
-        #{request_struct.interface}
-        #{request_struct.path}
-        #{request_struct.version}
-      URL
+      url = URI.join(
+        client.base_endpoint,
+        request_struct.interface,
+        request_struct.path,
+        request_struct.version
+      )
+      url.query = query_params
+
+      url
+    end
+
+    def query_params
+      all_params = {}.tap do |params|
+        params[:key] = client.api_token
+        params.merge!(request_struct.query_params)
+      end
+
+      URI.encode_www_form(all_params)
     end
 
     def build_options
