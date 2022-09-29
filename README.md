@@ -23,7 +23,8 @@ $ bundle install
 ```
 
 ## Usage
-TODO
+
+All use of the Steam Web API requires the use of an API Key. You can acquire one [by filling out this form](https://steamcommunity.com/dev/apikey).
 
 ### Configuring the client
 TODO
