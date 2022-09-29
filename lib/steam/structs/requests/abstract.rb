@@ -1,8 +1,12 @@
 module Steam
-  module Struct
+  module Structs
     module Requests
       class Abstract < Steam::Structs::Base
         def version
+          raise NotImplementedError, 'Override this method'
+        end
+
+        def interface
           raise NotImplementedError, 'Override this method'
         end
 

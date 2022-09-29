@@ -22,7 +22,7 @@ module Steam
   class Client
     extended ::Dry::Configurable
 
-    BASE_ENDPOINT = 'https://api.steampowered.com/'
+    BASE_ENDPOINT = 'https://api.steampowered.com'
 
     setting :api_token
 

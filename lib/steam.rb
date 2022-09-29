@@ -2,8 +2,10 @@
 
 require 'dry-configurable'
 require 'dry-struct'
+require 'typhoeus'
 
 require 'steam/version'
+require 'steam/request'
 
 require 'steam/structs/types'
 require 'steam/structs/base'

@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'activesupport', '>= 4.0', '< 6.0'
   spec.add_dependency 'dry-configurable', '~> 0.15'
   spec.add_dependency 'dry-struct', '~> 1.4'
   spec.add_dependency 'typhoeus', '~> 1.4'
