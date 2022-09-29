@@ -7,6 +7,7 @@ module Steam
 
       module Optional
         String = ::Dry.Types::String.optional.default(nil)
+        Integer = ::Dry.Types::Integer.optional.default(nil)
       end
     end
   end

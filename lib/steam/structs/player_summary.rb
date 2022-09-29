@@ -26,9 +26,9 @@ module Steam
       # If set, indicates the user has a community profile configured (will be set to '1')
       attribute :profilestate, Types::String
       # The last time the user was online, in unix time.
-      attribute :lastlogoff, Types::Optional::String
+      attribute :lastlogoff, Types::Optional::Integer
       # If set, indicates the profile allows public comments.
-      attribute :commentpermission, Types::Optional::String
+      attribute :commentpermission, Types::Optional::Integer
     end
   end
 end
