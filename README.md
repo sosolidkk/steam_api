@@ -1,22 +1,56 @@
 # Steam::Interface
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/steam/interface`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A project for fetching some information from [Steam Web Api](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add steam-interface
+```bash
+$ bundle add steam-interface
+```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install steam-interface
+```bash
+$ gem install steam-interface
+```
+
+And then execute:
+
+```bash
+$ bundle install
+```
 
 ## Usage
+TODO
 
-TODO: Write usage instructions here
+### Configuring the client
+TODO
+
+### Authorization
+TODO
+
+### GetNewsForApp (v0002)
+TODO
+
+### GetGlobalAchievementPercentagesForApp (v0002)
+TODO
+
+### GetPlayerSummaries (v0002)
+TODO
+
+### GetFriendList (v0001)
+TODO
+
+### GetPlayerAchievements (v0001)
+TODO
+
+### GetOwnedGames (v0001)
+TODO
+
+### GetRecentlyPlayedGames (v0001)
+TODO
 
 ## Development
 
@@ -26,7 +60,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/steam-interface. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/steam-interface/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/steam-interface. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sosolidkk/steam-interface/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
