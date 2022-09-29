@@ -1,6 +1,6 @@
 module Steam
   module Structs
-    # Struct that holds the Player Summary information
+    # Struct that holds an App news information
     # @see https://developer.valvesoftware.com/wiki/Steam_Web_API#GetNewsForApp_.28v0002.29
     class AppNew < Dry::Struct
       attribute :gid, Types::String

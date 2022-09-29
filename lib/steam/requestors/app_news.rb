@@ -1,10 +1,12 @@
 module Steam
   module Requestors
-    # Class that expose the necessary method(s) to get the summary of a
-    # player profile in the Steam Web Api.
+    # Class that expose the necessary method(s) to get the news of an
+    # app in the Steam Web Api.
     class AppNews < Base
-      # Get on the Api the summary of a player profile.
-      # @param [String] steamids - The Steam order's id
+      # Get on the Api one or more news of an App in the Steam.
+      # @param [Integer] appid - The Steam app' id
+      # @param [Integer] count - The number of wanted news
+      # @param [Integer] maxlength - The max length of the news content
       # @return [Steam::Structs::AppNews] instance with the
       #   player summary details.
       def retrieve(appid, count, maxlength=300)
