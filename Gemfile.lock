@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    steam-interface (0.1.0)
+    steam_interface (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -51,7 +51,7 @@ DEPENDENCIES
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)
-  steam-interface!
+  steam_interface!
 
 BUNDLED WITH
    2.3.16
