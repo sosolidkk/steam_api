@@ -29,8 +29,9 @@ module Steam
     attr_accessor :api_token
 
     attr_reader \
-      :app_news,
       :app_global_achievements,
+      :app_news,
+      :game_current_players,
       :player_achievements,
       :player_game_stats,
       :player_recent_games,
@@ -45,6 +46,7 @@ module Steam
 
       @app_global_achievements ||= Steam::Requestors::AppGlobalAchievements.new(self)
       @app_news ||= Steam::Requestors::AppNews.new(self)
+      @game_current_players ||= Steam::Requestors::GameCurrentPlayers.new(self)
       @player_achievements ||= Steam::Requestors::PlayerAchievements.new(self)
       @player_game_stats ||= Steam::Requestors::PlayerGameStats.new(self)
       @player_recent_games ||= Steam::Requestors::PlayerRecentGames.new(self)

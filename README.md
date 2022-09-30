@@ -60,10 +60,10 @@ TODO
 - [Doc link](https://wiki.teamfortress.com/wiki/WebAPI/ResolveVanityURL)
 
 ### GetNumberOfCurrentPlayers (v0001)
-TODO
+- [Doc link](https://wiki.teamfortress.com/wiki/WebAPI/GetNumberOfCurrentPlayers)
 
 ### GetSteamLevel (v0001)
-TODO
+- [Doc link](https://wiki.teamfortress.com/wiki/WebAPI/GetSteamLevel)
 
 ## Development
 
