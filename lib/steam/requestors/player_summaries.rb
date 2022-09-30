@@ -4,7 +4,7 @@ module Steam
     # player profile in the Steam Web Api.
     class PlayerSummaries < Base
       # Get on the Api the summary of a player profile.
-      # @param [String] steamids - The Steam order's id
+      # @param [Array<Integer>] steamids - The Steam order's id
       # @return [Steam::Structs::PlayerSummaries] instance with the
       #   player summary details.
       def retrieve(steamids)

@@ -3,7 +3,7 @@ module Steam
     module Requests
       class GetPlayerGameStats < Abstract
         attribute :appid, Types::Integer
-        attribute :steamid, Types::String
+        attribute :steamid, Types::Integer
 
         # Build the struct through the received params.
         # @params [Hash] params - The hash params.

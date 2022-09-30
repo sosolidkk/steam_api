@@ -2,7 +2,7 @@ module Steam
   module Structs
     module Requests
       class GetPlayerSummaries < Abstract
-        attribute :steamids, Types::Array.of(Types::Coercible::String)
+        attribute :steamids, Types::Array.of(Types::Coercible::Integer)
 
         # Build the struct through the received params.
         # @params [Hash] params - The hash params.
