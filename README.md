@@ -51,7 +51,7 @@ TODO
 - [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetUserStatsForGame_.28v0002.29)
 
 ### GetOwnedGames (v0001)
-TODO
+- [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetOwnedGames_.28v0001.29)
 
 ### GetRecentlyPlayedGames (v0001)
 - [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetRecentlyPlayedGames_.28v0001.29)
