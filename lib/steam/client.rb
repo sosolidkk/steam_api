@@ -33,6 +33,7 @@ module Steam
       :app_news,
       :game_current_players,
       :player_achievements,
+      :player_friends,
       :player_game_stats,
       :player_level,
       :player_owned_games,
@@ -50,6 +51,7 @@ module Steam
       @app_news ||= Steam::Requestors::AppNews.new(self)
       @game_current_players ||= Steam::Requestors::GameCurrentPlayers.new(self)
       @player_achievements ||= Steam::Requestors::PlayerAchievements.new(self)
+      @player_friends ||= Steam::Requestors::PlayerFriends.new(self)
       @player_game_stats ||= Steam::Requestors::PlayerGameStats.new(self)
       @player_level ||= Steam::Requestors::PlayerLevel.new(self)
       @player_owned_games ||= Steam::Requestors::PlayerOwnedGames.new(self)

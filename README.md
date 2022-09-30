@@ -42,7 +42,7 @@ TODO
 - [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerSummaries_.28v0002.29)
 
 ### GetFriendList (v0001)
-TODO
+- [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetFriendList_.28v0001.29)
 
 ### GetPlayerAchievements (v0001)
 - [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerAchievements_.28v0001.29)
