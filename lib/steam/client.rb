@@ -29,12 +29,13 @@ module Steam
     attr_accessor :api_token
 
     attr_reader \
-      :player_summary,
       :app_news,
       :app_global_achievements,
       :player_achievements,
       :player_game_stats,
-      :player_recent_games
+      :player_recent_games,
+      :player_steamid,
+      :player_summaries
 
     # Initialize the client
     # @param [String] api_token - An existing api token.
@@ -47,7 +48,8 @@ module Steam
       @player_achievements ||= Steam::Requestors::PlayerAchievements.new(self)
       @player_game_stats ||= Steam::Requestors::PlayerGameStats.new(self)
       @player_recent_games ||= Steam::Requestors::PlayerRecentGames.new(self)
-      @player_summary ||= Steam::Requestors::PlayerSummaries.new(self)
+      @player_steamid ||= Steam::Requestors::PlayerSteamId.new(self)
+      @player_summaries ||= Steam::Requestors::PlayerSummaries.new(self)
     end
 
     # Return the client config values
