@@ -13,7 +13,7 @@ module Steam
   # ```
   #
   # All API calls take the form:
-  # http://api.steampowered.com/<interface name>/<method name>/v<version>/?key=<api key>&format=<format>.
+  # http://api.steampowered.com/<interface name>/<method name>/<version>/?key=<api key>&format=<format>.
   # Format can be any of:
   #   json - The output will be returned in the JSON format
   #   xml - Output is returned as an XML document
