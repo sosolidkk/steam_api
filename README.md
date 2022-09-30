@@ -33,24 +33,36 @@ TODO
 TODO
 
 ### GetNewsForApp (v0002)
-TODO
+- [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetNewsForApp_.28v0002.29)
 
 ### GetGlobalAchievementPercentagesForApp (v0002)
-TODO
+- [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetGlobalAchievementPercentagesForApp_.28v0002.29)
 
 ### GetPlayerSummaries (v0002)
-TODO
+- [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerSummaries_.28v0002.29)
 
 ### GetFriendList (v0001)
 TODO
 
 ### GetPlayerAchievements (v0001)
-TODO
+- [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerAchievements_.28v0001.29)
+
+### GetUserStatsForGame (v0002)
+- [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetUserStatsForGame_.28v0002.29)
 
 ### GetOwnedGames (v0001)
 TODO
 
 ### GetRecentlyPlayedGames (v0001)
+- [Doc link](https://developer.valvesoftware.com/wiki/Steam_Web_API#GetRecentlyPlayedGames_.28v0001.29)
+
+### ResolveVanityURL (v0001)
+- [Doc link](https://wiki.teamfortress.com/wiki/WebAPI/ResolveVanityURL)
+
+### GetNumberOfCurrentPlayers (v0001)
+TODO
+
+### GetSteamLevel (v0001)
 TODO
 
 ## Development
