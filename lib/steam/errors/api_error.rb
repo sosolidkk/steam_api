@@ -30,5 +30,6 @@ module Steam
     class HttpBadRequest < ApiError; end
     class HttpUnauthorized < ApiError; end
     class HttpNotFound < ApiError; end
+    class HttpInternalServerError < ApiError; end
   end
 end

@@ -11,6 +11,7 @@ module Steam
       return unless response.fail?
 
       raise_response_4xx(response) if (400..499).cover?(response.status_code)
+      raise_response_5xx(response) if (500..599).cover?(response.status_code)
     end
 
     private
@@ -20,6 +21,12 @@ module Steam
       when 400 then raise Steam::Errors::HttpBadRequest, response
       when 401 then raise Steam::Errors::HttpUnauthorized, response
       when 404 then raise Steam::Errors::HttpNotFound, response
+      end
+    end
+
+    def raise_response_5xx(response)
+      case response.status_code
+      when 500 then raise Steam::Errors::HttpInternalServerError, response
       end
     end
   end
