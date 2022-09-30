@@ -30,7 +30,8 @@ module Steam
 
     attr_reader \
       :player_summary,
-      :app_news
+      :app_news,
+      :app_global_achievements
 
     # Initialize the client
     # @param [String] api_token - An existing api token.
@@ -38,6 +39,7 @@ module Steam
     def initialize(api_token=nil)
       @api_token = api_token
 
+      @app_global_achievements ||= Steam::Requestors::AppGlobalAchievements.new(self)
       @app_news ||= Steam::Requestors::AppNews.new(self)
       @player_summary ||= Steam::Requestors::PlayerSummaries.new(self)
     end
