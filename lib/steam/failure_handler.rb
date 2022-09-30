@@ -20,6 +20,7 @@ module Steam
       case response.status_code
       when 400 then raise Steam::Errors::HttpBadRequest, response
       when 401 then raise Steam::Errors::HttpUnauthorized, response
+      when 403 then raise Steam::Errors::HttpForbidden, response
       when 404 then raise Steam::Errors::HttpNotFound, response
       end
     end

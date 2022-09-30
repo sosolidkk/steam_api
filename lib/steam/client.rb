@@ -34,6 +34,7 @@ module Steam
       :game_current_players,
       :player_achievements,
       :player_game_stats,
+      :player_level,
       :player_recent_games,
       :player_steamid,
       :player_summaries
@@ -49,6 +50,7 @@ module Steam
       @game_current_players ||= Steam::Requestors::GameCurrentPlayers.new(self)
       @player_achievements ||= Steam::Requestors::PlayerAchievements.new(self)
       @player_game_stats ||= Steam::Requestors::PlayerGameStats.new(self)
+      @player_level ||= Steam::Requestors::PlayerLevel.new(self)
       @player_recent_games ||= Steam::Requestors::PlayerRecentGames.new(self)
       @player_steamid ||= Steam::Requestors::PlayerSteamId.new(self)
       @player_summaries ||= Steam::Requestors::PlayerSummaries.new(self)
