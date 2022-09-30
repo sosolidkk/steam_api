@@ -5,7 +5,7 @@ module Steam
     class AppGlobalAchievements < Base
       # Get on the Api one or more news of an App in the Steam.
       # @param [String] gameid - The Steam app' id
-      # @return [Steam::Structs::AppNews] instance with the
+      # @return [Steam::Structs::AppGlobalAchievements] instance with the
       #   player summary details.
       def retrieve(gameid)
         build_request_and_run(
