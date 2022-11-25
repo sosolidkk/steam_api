@@ -1,0 +1,25 @@
+---
+
+# References:
+# https://github.com/troessner/reek#configuration-options
+
+exclude_paths:
+  - bin
+  - public
+  - spec
+  - storage
+  - tmp
+  - vendor
+
+detectors:
+  # https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md
+  IrresponsibleModule:
+    enabled: false
+
+  # https://github.com/troessner/reek/blob/master/docs/Nil-Check.md
+  NilCheck:
+    enabled: false
+
+  # https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md
+  TooManyStatements:
+    enabled: false # Rubocop's responsability
