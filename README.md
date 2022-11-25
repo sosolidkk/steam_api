@@ -1,4 +1,4 @@
-# Steam::Interface
+# Steam API
 
 A project for fetching some information from [Steam Web Api](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
@@ -180,13 +180,54 @@ client.player_level.retrieve(76561198160009756)
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+This project runs on docker to better system compatibility and better compatibility and uniform access to OS resources.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Optionally you can run it directly on your machine OS, this is specially useful for MacOS and Windows developers due to performance downgrade on docker virtualization layer. But keep in mind that the CI process runs on docker and its results must prevails over any kind of result difference to your machine.
+
+### Requirements
+
+On your local development machine, you must have installed:
+ - `docker` version 19.03.13 or newer
+ - `docker-compose` version 2.0.0 or newer
+ - `dip` version 7.5.0 or newer
+
+### Initial setup
+
+[Install dip](https://github.com/bibendi/dip#installation) for your system.
+
+Run `bin/setup` to setup the system using Docker.
+
+### Interactive console
+
+Launch a new interactive session on ruby with `dip irb` or a shell session with `dip sh`.
+
+### Running specs
+
+Execute all automated tests by running `dip rspec`.
+
+## Code quality
+
+We use the [Pronto](https://github.com/prontolabs/pronto) tool to run all linters and code quality tools, both in development and on CI.
+
+Tools
+
+- [Rubocop](https://github.com/prontolabs/pronto-rubocop): Ruby static code analyzer and formatter, based on the community Ruby style guide (via `pronto-rubocop`)
+- [Reek](https://github.com/prontolabs/pronto-reek): code smell detector for Ruby (via `pronto-reek`)
+- [Flay](https://github.com/prontolabs/pronto-flay): analyzes code for structural similarities (via `pronto-flay`)
+- [Fasterer](https://github.com/prontolabs/pronto-fasterer): performance checker and suggester (via `pronto-fasterer`)
+- [Brakeman](https://github.com/prontolabs/pronto-brakeman): static analysis security vulnerability scanner for Ruby on Rails applications (via `pronto-brakeman`)
+
+### Analyzing the code
+
+To run these tools use:
+
+```bash
+$ dip lint
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/steam-interface. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sosolidkk/steam-interface/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/steam. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sosolidkk/steam-interface/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -194,4 +235,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Steam::Interface project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/steam-interface/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Steam project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/steam-interface/blob/main/CODE_OF_CONDUCT.md).
