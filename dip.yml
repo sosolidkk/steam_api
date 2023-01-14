@@ -1,0 +1,45 @@
+# Required minimum dip version
+version: '7.5'
+
+environment:
+  RAILS_ENV: development
+
+compose:
+  files:
+    - .dockerdev/docker-compose.yml
+  project_name: steam
+
+interaction:
+  sh:
+    description: Open a shell session on container to run arbitrary shell script
+    service: gem
+    command: /bin/bash
+    compose:
+      run_options: [no-deps]
+
+  irb:
+    description: Open an IRB session on container to run arbitary ruby scripts
+    service: gem
+    command: ruby /app/bin/console
+
+  bundle:
+    description: Run Bundler commands
+    service: gem
+    command: bundle
+
+  rspec:
+    description: Run RSpec tests
+    service: gem
+    environment:
+      RAILS_ENV: test
+    command: bundle exec rspec
+
+  lint:
+    description: Run pronto and all configured linters and code quality tools
+    service: gem
+    command: bundle exec pronto run -c origin/main
+
+provision:
+  - dip compose down --volumes
+  - dip compose build
+  - dip bundle install

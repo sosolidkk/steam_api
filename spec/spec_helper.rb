@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "steam/interface"
+require "steam"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

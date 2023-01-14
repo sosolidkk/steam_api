@@ -1,0 +1,24 @@
+# GIT
+.git
+.gitignore
+
+# Editor temp files
+*.swp
+*.swo
+
+# Docker
+*Dockerfile*
+*docker-compose*
+.dockerignore
+
+# Bundle
+vendor/bundle/
+
+# Specs
+spec/
+
+# CI
+.gitlab-ci.yml
+
+# Dev tools
+.rspec_status

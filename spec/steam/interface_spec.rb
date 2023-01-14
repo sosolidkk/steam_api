@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe Steam::Interface do
+RSpec.describe Steam do
   it "has a version number" do
-    expect(Steam::Interface::VERSION).not_to be nil
+    expect(Steam::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "has version 0.1.2" do
+    expect(Steam::VERSION).to eq('0.1.2')
   end
 end

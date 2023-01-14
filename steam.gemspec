@@ -3,7 +3,7 @@
 require_relative 'lib/steam/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'steam_interface'
+  spec.name = 'steam'
   spec.version = Steam::VERSION
   spec.authors = ['Nuuvem Team']
   spec.email = ['developers@nuuvem.com']

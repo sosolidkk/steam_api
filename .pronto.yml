@@ -1,0 +1,18 @@
+---
+
+  # References:
+  # https://github.com/prontolabs/pronto#configuration
+
+  all:
+    exclude:
+      - 'spec/**/*'
+      - 'coverage/**/*'
+      - 'bin/**/*'
+      - '.gitlab-ci.yml'
+
+  # gitlab:
+  #   slug: 13888337 # GitLab's project ID
+  #   api_endpoint: https://gitlab.com/api/v4
+  #   # api_private_token: # use PRONTO_GITLAB_API_PRIVATE_TOKEN env var
+
+  verbose: true
