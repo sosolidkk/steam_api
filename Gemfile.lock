@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    steam_api (0.1.2)
+    steam_api (0.1.5)
       activesupport (>= 4.0, < 6.0)
       dry-configurable (~> 0.15)
       dry-struct (~> 1.4)
