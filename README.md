@@ -1,6 +1,6 @@
-# Steam API
+# steam_api
 
-A project for fetching some information from [Steam Web Api](https://developer.valvesoftware.com/wiki/Steam_Web_API).
+A project for fetching information from [Steam Web Api](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
 ## Installation
 
@@ -31,7 +31,7 @@ All use of the Steam Web API requires the use of an API Key. You can acquire one
 Just use the following snippet to configure the client:
 
 ```ruby
-Steam::Client.configure do |config|
+SteamApi::Client.configure do |config|
   config.api_token = 'your-API-token-value'
 end
 ```
@@ -43,7 +43,7 @@ To perform some of the requests, not all of them, you need to create an API Toke
 After having the token, you can initialize the client like the configuring section, or if you want a standalone usage, you can do it this way:
 
 ```ruby
-client = Steam::Client.new('API-token-value')
+client = SteamApi::Client.new('dev-api-token')
 ```
 
 Some endpoints don't need an API Key, so you can use the client without providing any. You can find which in the next section.
@@ -56,7 +56,7 @@ Some endpoints don't need an API Key, so you can use the client without providin
   - **maxlength**: Maximum length of each news entry. Defaults to 300
 
 ```ruby
-client = Steam::Client.new
+client = SteamApi::Client.new
 client.app_news.retrieve(400, 3, 300)
 ```
 
@@ -66,7 +66,7 @@ client.app_news.retrieve(400, 3, 300)
   - **gameid**: AppID of the game you want the news of.
 
 ```ruby
-client = Steam::Client.new
+client = SteamApi::Client.new
 client.app_global_achievements.retrieve(440)
 ```
 
@@ -77,7 +77,7 @@ client.app_global_achievements.retrieve(440)
   - **key**: Steam Api Key.
 
 ```ruby
-client = Steam::Client.new(your_api_token)
+client = SteamApi::Client.new(your_api_token)
 # You can a list with multiple IDs here
 client.player_summaries.retrieve([76561198160009756])
 ```
@@ -90,7 +90,7 @@ client.player_summaries.retrieve([76561198160009756])
   - **key**: Your Steam API Key.
 
 ```ruby
-client = Steam::Client.new(your_api_token)
+client = SteamApi::Client.new(your_api_token)
 client.player_friends.retrieve(76561198160009756, 'friend') # 76561197972495328
 ```
 
@@ -102,7 +102,7 @@ client.player_friends.retrieve(76561198160009756, 'friend') # 76561197972495328
   - **key**: Your Steam API Key.
 
 ```ruby
-client = Steam::Client.new(your_api_token)
+client = SteamApi::Client.new(your_api_token)
 client.player_achievements.retrieve(1245620, 76561198160009756) # 1245620: Elden Ring
 ```
 
@@ -114,7 +114,7 @@ client.player_achievements.retrieve(1245620, 76561198160009756) # 1245620: Elden
   - **key**: Your Steam API Key.
 
 ```ruby
-client = Steam::Client.new(your_api_token)
+client = SteamApi::Client.new(your_api_token)
 client.player_game_stats.retrieve(1245620, 76561198160009756) # 1245620: Elden Ring
 ```
 
@@ -127,7 +127,7 @@ client.player_game_stats.retrieve(1245620, 76561198160009756) # 1245620: Elden R
   - **key**: Your Steam API Key.
 
 ```ruby
-client = Steam::Client.new(your_api_token)
+client = SteamApi::Client.new(your_api_token)
 client.player_owned_games.retrieve(76561198160009756) # Defaults other args to false
 client.player_owned_games.retrieve(76561198160009756, include_appinfo: true, include_played_free_games: true)
 ```
@@ -140,7 +140,7 @@ client.player_owned_games.retrieve(76561198160009756, include_appinfo: true, inc
   - **key**: Your Steam API Key.
 
 ```ruby
-client = Steam::Client.new(your_api_token)
+client = SteamApi::Client.new(your_api_token)
 client.player_recent_games.retrieve(76561198160009756) # Public profile
 client.player_recent_games.retrieve(76561197972495328, count=10) # Private profile (everything empty)
 ```
@@ -152,7 +152,7 @@ client.player_recent_games.retrieve(76561197972495328, count=10) # Private profi
   - **key**: Your Steam API Key.
 
 ```ruby
-client = Steam::Client.new(your_api_token)
+client = SteamApi::Client.new(your_api_token)
 client.player_steamid.retrieve('gabelogannewell')
 client.player_steamid.retrieve('sosolidkk1')
 ```
@@ -163,7 +163,7 @@ client.player_steamid.retrieve('sosolidkk1')
   - **appid**: The ID for the game you're requesting.
 
 ```ruby
-client = Steam::Client.new
+client = SteamApi::Client.new
 client.game_current_players.retrieve(440) # Team Fortress 2
 client.game_current_players.retrieve(1245620) # Elden Ring
 ```
@@ -174,7 +174,7 @@ client.game_current_players.retrieve(1245620) # Elden Ring
   - **steamid**: The SteamID of the account.
 
 ```ruby
-client = Steam::Client.new(your_api_token)
+client = SteamApi::Client.new(your_api_token)
 client.player_level.retrieve(76561198160009756)
 ```
 

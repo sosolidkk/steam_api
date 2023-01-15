@@ -15,6 +15,8 @@ gem 'webmock', '~> 3.4', require: false
 
 gem 'rubocop', '~> 1.21'
 
+gem 'faraday-retry', '~> 2.0.0'
+
 group :development do
   gem 'pronto-brakeman', '~> 0.11.0', require: false
   gem 'pronto-fasterer', '~> 0.11.0', require: false
