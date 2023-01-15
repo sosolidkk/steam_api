@@ -24,8 +24,8 @@ WORKDIR /app
 
 # We need to copy the version.rb in order to reuse the images layers
 # if any change are made in Gemfile or gemspec, improving the image build.
-COPY ./lib/steam/version.rb /app/lib/steam/
-COPY steam.gemspec Gemfile* /app/
+COPY ./lib/steam_api/version.rb /app/lib/steam_api/
+COPY steam_api.gemspec Gemfile* /app/
 RUN bundle install
 
 COPY . /app/
