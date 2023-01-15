@@ -1,3 +1,33 @@
+
+# Summary
+- [Summary](#summary)
+- [steam\_api](#steam_api)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Configuring the client](#configuring-the-client)
+    - [Authorization](#authorization)
+    - [GetNewsForApp (v0002)](#getnewsforapp-v0002)
+    - [GetGlobalAchievementPercentagesForApp (v0002)](#getglobalachievementpercentagesforapp-v0002)
+    - [GetPlayerSummaries (v0002)](#getplayersummaries-v0002)
+    - [GetFriendList (v0001)](#getfriendlist-v0001)
+    - [GetPlayerAchievements (v0001)](#getplayerachievements-v0001)
+    - [GetUserStatsForGame (v0002)](#getuserstatsforgame-v0002)
+    - [GetOwnedGames (v0001)](#getownedgames-v0001)
+    - [GetRecentlyPlayedGames (v0001)](#getrecentlyplayedgames-v0001)
+    - [ResolveVanityURL (v0001)](#resolvevanityurl-v0001)
+    - [GetNumberOfCurrentPlayers (v0001)](#getnumberofcurrentplayers-v0001)
+    - [GetSteamLevel (v0001)](#getsteamlevel-v0001)
+  - [Development](#development)
+    - [Requirements](#requirements)
+    - [Initial setup](#initial-setup)
+    - [Interactive console](#interactive-console)
+    - [Running specs](#running-specs)
+  - [Code quality](#code-quality)
+    - [Analyzing the code](#analyzing-the-code)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Code of Conduct](#code-of-conduct)
+
 # steam_api
 
 A project for fetching information from [Steam Web Api](https://developer.valvesoftware.com/wiki/Steam_Web_API).
