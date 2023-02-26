@@ -29,7 +29,7 @@ module SteamApi
       case request_struct.endpoint_kind
       when :base_endpoint then url = build_base_url
       when :storefront_endpoint then url = build_storefront_url
-      else raise StandardError
+      else raise SteamApi::Errors::EndpointKindNotSupported
       end
 
       @raw_request = ::Typhoeus::Request.new(url, build_options)

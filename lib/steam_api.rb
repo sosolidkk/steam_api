@@ -14,6 +14,7 @@ require 'steam_api/response'
 require 'steam_api/failure_handler'
 
 require 'steam_api/errors/api_error'
+require 'steam_api/errors/url_error'
 
 require 'steam_api/requestors/base'
 require 'steam_api/requestors/app_details'
