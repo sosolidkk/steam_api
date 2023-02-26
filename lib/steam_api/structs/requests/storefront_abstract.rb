@@ -24,13 +24,13 @@ module SteamApi
         #   For localized strings; takes English name of language (none of those fancy ISO distractions).
         # v (Optional)
         #   Unknown.
-        # Given that information, I'm going to default the currency to 'BRL' and locale to 'en'.
+        # Given that information, I'm going to default the currency to 'USD' and locale to 'en'.
         #
         # @see https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI#Global_parameters
         # @return [Hash]
         def query_params
           {
-            cc: 'BRL',
+            cc: 'US',
             l: 'en'
           }
         end

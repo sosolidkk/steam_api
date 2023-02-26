@@ -4,16 +4,22 @@ module SteamApi
     # app in the Steam Web Api.
     class AppDetails < Base
       # Get on the Api the details of an app.
-      # @param [Array<Integer>] appid - The Steam app id
+      # @param [Integer] appid - The Steam app id
       # @param [Array<Integer>] filters - The Steam to filter field values
+      # @param [String] cc - Country code for method to return appropriate currency values.
+      #   Defaults to US
+      # @param [String] locale - Localized strings; takes English name of language.
+      #   Defaults to en
       # @return [SteamApi::Structs::PlayerSummaries] instance with the
       #   player summary details.
-      def retrieve(appid, filters=[])
+      def retrieve(appid:, filters: [], cc: 'US', locale: 'en')
         build_request_and_run(
           SteamApi::Structs::Requests::GetAppDetails,
           SteamApi::Structs::AppDetails::Details,
           appid: appid,
-          filters: filters
+          filters: filters,
+          cc: cc,
+          l: locale
         )
       end
     end

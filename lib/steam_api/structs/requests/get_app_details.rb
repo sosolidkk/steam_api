@@ -4,12 +4,14 @@ module SteamApi
       class GetAppDetails < StorefrontAbstract
         attribute :appid, Types::Integer
         attribute :filters, Types::Array.of(Types::String)
+        attribute :cc, Types::String
+        attribute :l, Types::String
 
         # Build the struct through the received params.
         # @params [Hash] params - The hash params.
         # @return an instance of the Struct
         def self.build_from_params(params)
-          %i[appid filters].each do |attrib|
+          %i[appid].each do |attrib|
             raise StandardError, "#{attrib} is missing" unless params.key?(attrib)
           end
 
@@ -25,10 +27,14 @@ module SteamApi
         # Returns the query params needed for the HTTP request
         # @return [Hash]
         def query_params
-          {
-            appids: appid,
-            filters: filters.join(',')
-          }
+          super.merge(
+            {
+              appids: appid,
+              filters: filters.join(','),
+              cc: cc,
+              l: l
+            }
+          )
         end
 
         # Return the class attributes as a Hash
