@@ -24,15 +24,33 @@ module SteamApi
     attr_accessor :request_struct, :response_struct, :client, :raw_request, :failure_handler
 
     def build_request
+      url = nil
+
+      case request_struct.endpoint_kind
+      when :base_endpoint then url = build_base_url
+      when :storefront_endpoint then url = build_storefront_url
+      else raise StandardError
+      end
+
       @raw_request = ::Typhoeus::Request.new(url, build_options)
     end
 
-    def url
+    def build_base_url
       url = URI.join(
         client.base_endpoint,
         request_struct.interface,
         request_struct.path,
         request_struct.version
+      )
+      url.query = query_params
+
+      url
+    end
+
+    def build_storefront_url
+      url = URI.join(
+        client.storefront_endpoint,
+        request_struct.path
       )
       url.query = query_params
 
@@ -52,7 +70,8 @@ module SteamApi
       {
         method: request_struct.method,
         headers: default_headers,
-        body: request_struct.body.to_json
+        body: request_struct.body.to_json,
+        followlocation: true
       }
     end
 

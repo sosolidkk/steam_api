@@ -19,16 +19,25 @@ module SteamApi
   #   xml - Output is returned as an XML document
   #   vdf - Output is returned as a VDF file.
   # If you do not specify a format, your results will be returns in the JSON format.
+  #
+  # As we dive deeper into the implementation and find more endpoints to include in this
+  # gem, some changes were needed to support the storefront API which is what Steam's
+  # Big Picture Mode uses.
+  # All API calls take the form:
+  # https://store.steampowered.com/api/<method>?appids=1,2,3&filters=basic,recommendations
+  # For more information, vist: https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI
   class Client
     extend ::Dry::Configurable
 
     BASE_ENDPOINT = 'https://api.steampowered.com'
+    STOREFRONT_API_ENDPOINT = 'https://store.steampowered.com/api/'
 
     setting :api_token
 
     attr_accessor :api_token
 
     attr_reader \
+      :app_details,
       :app_global_achievements,
       :app_news,
       :game_current_players,
@@ -44,9 +53,10 @@ module SteamApi
     # Initialize the client
     # @param [String] api_token - An existing api token.
     # @return [SteamApi::Client] - A new class instance.
-    def initialize(api_token=nil)
+    def initialize(api_token: nil)
       @api_token = api_token
 
+      @app_details ||= SteamApi::Requestors::AppDetails.new(self)
       @app_global_achievements ||= SteamApi::Requestors::AppGlobalAchievements.new(self)
       @app_news ||= SteamApi::Requestors::AppNews.new(self)
       @game_current_players ||= SteamApi::Requestors::GameCurrentPlayers.new(self)
@@ -67,6 +77,10 @@ module SteamApi
 
     def base_endpoint
       BASE_ENDPOINT
+    end
+
+    def storefront_endpoint
+      STOREFRONT_API_ENDPOINT
     end
   end
 end

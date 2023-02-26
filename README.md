@@ -17,6 +17,7 @@
     - [ResolveVanityURL (v0001)](#resolvevanityurl-v0001)
     - [GetNumberOfCurrentPlayers (v0001)](#getnumberofcurrentplayers-v0001)
     - [GetSteamLevel (v0001)](#getsteamlevel-v0001)
+    - [App Details](#app-details)
   - [Development](#development)
     - [Requirements](#requirements)
     - [Initial setup](#initial-setup)
@@ -54,7 +55,7 @@ $ bundle install
 
 ## Usage
 
-All use of the Steam Web API requires the use of an API Key. You can acquire one [by filling out this form](https://steamcommunity.com/dev/apikey).
+Almost all use of the Steam Web API requires the use of an API Key. You can acquire one [by filling out this form](https://steamcommunity.com/dev/apikey).
 
 ### Configuring the client
 
@@ -67,8 +68,6 @@ end
 ```
 
 ### Authorization
-
-To perform some of the requests, not all of them, you need to create an API Token in your steam account. You follow [this guide](https://steamcommunity.com/dev/apikey) to know how to do it.
 
 After having the token, you can initialize the client like the configuring section, or if you want a standalone usage, you can do it this way:
 
@@ -208,6 +207,36 @@ client = SteamApi::Client.new(your_api_token)
 client.player_level.retrieve(76561198160009756)
 ```
 
+### [App Details](https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI#appdetails)
+> Returns the store details for the given app id.
+- Arguments
+  - **appid**: The ID for the game you're requesting.
+    - By default, the current implementation of the SteamApi supports multiple AppIDs at the same time. But this gem does not (yet) supports it.
+  - **filters (optional)**: The filters for the data you want to be fetched.
+    - Any key names except those listed under basic are acceptable as filter values. There are the keys returned when the basic filter is used:
+      - `type`
+      - `name`
+      - `steam_appid`
+      - `required_age`
+      - `dlc`
+      - `detailed_description`
+      - `about_the_game`
+      - `supported_languages`
+      - `detailed_description`
+      - `supported_languages`
+      - `header_image`
+      - `website`
+      - `pc_requirements`
+      - `mac_requirements`
+      - `linux_requirements`
+
+```ruby
+client = SteamApi::Client.new
+client.app_details.retrieve(1091500) # without filter, it returns everything
+client.app_details.retrieve(1091500, ['basic']) # with a filter
+client.app_details.retrieve(1091500, ['basic', 'recommendations', 'achievements']) # with multiple filters
+```
+
 ## Development
 
 This project runs on docker to better system compatibility and better compatibility and uniform access to OS resources.
@@ -217,8 +246,8 @@ Optionally you can run it directly on your machine OS, this is specially useful 
 ### Requirements
 
 On your local development machine, you must have installed:
- - `docker` version 19.03.13 or newer
- - `docker-compose` version 2.0.0 or newer
+ - `docker` version 23.0.1 or newer
+ - `docker-compose` version 2.16.0 or newer
  - `dip` version 7.5.0 or newer
 
 ### Initial setup
@@ -257,7 +286,7 @@ $ dip lint
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/steam. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sosolidkk/steam-interface/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/sosolidkk/steam_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sosolidkk/steam-interface/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
