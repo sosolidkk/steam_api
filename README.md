@@ -229,12 +229,15 @@ client.player_level.retrieve(76561198160009756)
       - `pc_requirements`
       - `mac_requirements`
       - `linux_requirements`
+  - **cc (country_code, optional)**: The code for the country currency you want the prices to come.
+  - **l (locale, optional)**: The language the descriptions and text, in general, should be returned.
 
 ```ruby
 client = SteamApi::Client.new
-client.app_details.retrieve(1091500) # without filter, it returns everything
-client.app_details.retrieve(1091500, ['basic']) # with a filter
-client.app_details.retrieve(1091500, ['basic', 'recommendations', 'achievements']) # with multiple filters
+client.app_details.retrieve(appid: 1091500) # without filter, it returns everything
+client.app_details.retrieve(appid: 1091500, filters: ['basic']) # with a filter
+client.app_details.retrieve(appid: 1091500, filters: ['basic', 'recommendations', 'achievements']) # with multiple filters
+client.app_details.retrieve(appid: 1091500, country_code: 'BR', locale: 'pt') # with different country code and locale
 ```
 
 ## Development
