@@ -7,7 +7,7 @@ module SteamApi
         # @abstract
         # @return [String] the API path of the request path
         def path
-          raise NotImplementedError, 'Override this method'
+          raise NoMethodError, 'Override this method'
         end
 
         # Returns the HTTP method used by the request.
@@ -41,7 +41,7 @@ module SteamApi
           as_json.deep_symbolize_keys
         end
 
-        # Tells if the request needs the api_token in the query params
+        # Tells if the request require the api_token in the query params
         # @return [Boolean]
         def needs_authorization?
           true

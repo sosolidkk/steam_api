@@ -1,7 +1,7 @@
 module SteamApi
   module Structs
     module AppDetails
-      # Struct that holds the App/Game requirements information
+      # Struct that holds the App/Game requirement information
       # @see https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI#appdetails
       class Requirements < Base
         attribute :minimum?, Types::String
