@@ -1,40 +1,40 @@
 module SteamApi
   module Structs
     module Requests
-      class GetAppGlobalAchievements < Abstract
-        attribute :gameid, Types::Integer
+      class GetAppDetails < StorefrontAbstract
+        attribute :appid, Types::Integer
+        attribute :filters, Types::Array.of(Types::String)
+        attribute :cc, Types::String
+        attribute :l, Types::String
 
         # Build the struct through the received params.
         # @params [Hash] params - The hash params.
         # @return an instance of the Struct
         def self.build_from_params(params)
-          raise StandardError, ':gameid is missing' unless params.key?(:gameid)
+          %i[appid].each do |attrib|
+            raise StandardError, "#{attrib} is missing" unless params.key?(attrib)
+          end
 
           new(params)
-        end
-
-        # Returns the version value to create the request path
-        # @return [String] the version of the request path
-        def version
-          'v0002/'
-        end
-
-        # Returns the interface value to create the request path
-        # @return [String] the interface of the request path
-        def interface
-          'ISteamUserStats/'
         end
 
         # Returns the API path value to create the request path
         # @return [String] the API path of the request path
         def path
-          'GetGlobalAchievementPercentagesForApp/'
+          'appdetails/'
         end
 
         # Returns the query params needed for the HTTP request
         # @return [Hash]
         def query_params
-          {gameid: gameid}
+          super.merge(
+            {
+              appids: appid,
+              filters: filters.join(','),
+              cc: cc,
+              l: l
+            }
+          )
         end
 
         # Return the class attributes as a Hash

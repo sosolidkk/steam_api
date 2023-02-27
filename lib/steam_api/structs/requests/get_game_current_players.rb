@@ -43,7 +43,7 @@ module SteamApi
           {}
         end
 
-        # Tells if the request needs the api_token in the query params
+        # Tells if the request require the api_token in the query params
         # @return [Boolean]
         def needs_authorization?
           false
