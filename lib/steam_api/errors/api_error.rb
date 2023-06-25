@@ -21,16 +21,23 @@ module SteamApi
 
       def build_description_message
         <<~MESSAGE.squish
-          A request failed with the following response code (HTTP #{http_status_code})
-          and response body: #{response.body}
+          A request failed with the following status code: #{http_status_code}
+          and body: #{response.body}
         MESSAGE
       end
     end
 
+    # status_code: 400
     class HttpBadRequest < ApiError; end
+    # status_code: 401
     class HttpUnauthorized < ApiError; end
+    # status_code: 403
     class HttpForbidden < ApiError; end
+    # status_code: 404
     class HttpNotFound < ApiError; end
+    # status_code: 408
+    class HttpTimeout < ApiError; end
+    # status_code: 500
     class HttpInternalServerError < ApiError; end
   end
 end
