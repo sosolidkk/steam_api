@@ -5,17 +5,12 @@ services:
     build:
       context: ..
       dockerfile: .docker/Dockerfile
-      args:
-        RUBY_VERSION: '3.1.4'
-        BUNDLER_VERSION: '2.4.12'
     command: /bin/bash
     volumes:
       - ..:/app
       - ../.git:/app/.git
       - ../.gitignore:/app/.gitignore
       - bundle_cache:/gems
-    environment:
-      - RAILS_ENV=${RAILS_ENV:-development}
     stdin_open: true # Allow byebug interactive sessions
     tty: true # Allow byebug interactive sessions
 

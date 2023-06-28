@@ -1,6 +1,4 @@
-ARG RUBY_VERSION
-ARG BUNDLER_VERSION
-FROM ruby:$RUBY_VERSION-slim AS base_image
+FROM ruby:3.1.4-slim AS base_image
 
 # Common dependencies
 # apt-utils: contains some less used commandline utilities related to package management with APT
@@ -24,7 +22,7 @@ RUN apt-get update -qq \
 
 # Upgrade RubyGems and install required Bundler version
 RUN gem update --system
-RUN gem install bundler --version ${BUNDLER_VERSION}
+RUN gem install bundler --version 2.4.14
 
 WORKDIR /app
 

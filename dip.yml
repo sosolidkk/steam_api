@@ -37,7 +37,7 @@ interaction:
   lint:
     description: Run pronto and all configured linters and code quality tools
     service: gem
-    command: bundle exec pronto run -c origin/main
+    command: bundle exec pronto run -c origin/main --exit-code
 
 provision:
   - dip compose down --volumes
