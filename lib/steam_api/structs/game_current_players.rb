@@ -4,8 +4,8 @@ module SteamApi
     # @see https://wiki.teamfortress.com/wiki/WebAPI/GetNumberOfCurrentPlayers
     class GameCurrentPlayers < Base
       attribute :response do
-        attribute :player_count?, Types::Integer
-        attribute :result, Types::Integer
+        attribute :player_count?, Types::Coercible::Integer
+        attribute :result, Types::Coercible::Integer
       end
     end
   end

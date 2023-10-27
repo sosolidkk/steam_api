@@ -9,7 +9,7 @@ module SteamApi
       end
 
       attribute :playerstats do
-        attribute :steamID?, Types::String
+        attribute :steamID?, Types::Coercible::Integer.optional.default(nil)
         attribute :gameName?, Types::String
         attribute :achievements?, Types::Strict::Array.of(
           InternalPlayerGameStatsAttributes
