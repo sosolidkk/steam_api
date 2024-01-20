@@ -5,7 +5,7 @@ RSpec.describe SteamApi do
     expect(SteamApi::VERSION).not_to be nil
   end
 
-  it "has version 0.2.2" do
-    expect(SteamApi::VERSION).to eq('0.2.2')
+  it "has version 0.3.0" do
+    expect(SteamApi::VERSION).to eq('0.3.0')
   end
 end

@@ -1,22 +1,12 @@
 # Required minimum dip version
 version: '7.5'
 
-environment:
-  RAILS_ENV: development
-
 compose:
   files:
     - .dockerdev/docker-compose.yml
   project_name: steam
 
 interaction:
-  sh:
-    description: Open a shell session on container to run arbitrary shell script
-    service: gem
-    command: /bin/bash
-    compose:
-      run_options: [no-deps]
-
   irb:
     description: Open an IRB session on container to run arbitary ruby scripts
     service: gem
@@ -30,8 +20,6 @@ interaction:
   rspec:
     description: Run RSpec tests
     service: gem
-    environment:
-      RAILS_ENV: test
     command: bundle exec rspec
 
   lint:
