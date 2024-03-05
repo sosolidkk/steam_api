@@ -14,7 +14,7 @@ module SteamApi
       attribute :feedname, Types::String
       attribute :feed_type, Types::Integer
       attribute :appid, Types::Integer
-      attribute :tags?, Types::Strict::Array.of(Types::String)
+      attribute :tags?, Types::Strict::Array.of(Types::String).optional
     end
   end
 end
