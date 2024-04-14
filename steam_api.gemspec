@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'A ruby client to fetch from the public Steam web API'
   spec.homepage = 'https://rubygems.org/gems/'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 3.1'
+  spec.required_ruby_version = '>= 2.7'
 
   spec.metadata['homepage_uri'] = spec.homepage
 
