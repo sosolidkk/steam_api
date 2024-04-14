@@ -4,7 +4,19 @@ RSpec.describe SteamApi::Structs::AppNews do
   subject { described_class.new(params) }
 
   describe '#initialize' do
+    let(:params) do
+      {
+        appnews: {
+          appid: app_id,
+          count: count,
+          newsitems: [item]
+        }
+      }
+    end
+
     context 'when the params are present' do
+      let(:app_id) { 400 }
+      let(:count) { 2 }
       let(:item) do
         {
           gid: "6300039510132446959",
@@ -21,38 +33,16 @@ RSpec.describe SteamApi::Structs::AppNews do
           tags: nil
         }
       end
-      let(:params) do
-        {
-          appnews: {
-            appid: 400,
-            count: 2,
-            newsitems: [item]
-          }
-        }
-      end
 
-      it { is_expected.to have_attributes(appnews: have_attributes(appid: params[:appnews][:appid])) }
+      it { is_expected.to have_attributes(appnews: have_attributes(appid: app_id)) }
 
-      it { is_expected.to have_attributes(appnews: have_attributes(count: params[:appnews][:count])) }
+      it { is_expected.to have_attributes(appnews: have_attributes(count: count)) }
 
       it do
         is_expected.to have_attributes(
           appnews: have_attributes(
             newsitems: contain_exactly(
-              have_attributes(
-                gid: item[:gid],
-                title: item[:title],
-                url: item[:url],
-                is_external_url: item[:is_external_url],
-                author: item[:author],
-                contents: item[:contents],
-                feedlabel: item[:feedlabel],
-                date: item[:date],
-                feedname: item[:feedname],
-                feed_type: item[:feed_type],
-                appid: item[:appid],
-                tags: item[:tags],
-              )
+              have_attributes(**item)
             )
           )
         )

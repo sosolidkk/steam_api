@@ -38,6 +38,7 @@ RSpec.describe SteamApi::Structs::Base do
 
     context 'when the response is invalid' do
       let(:response) { { name: 'Newell', options: { baz: 'Invalid' } } }
+
       it 'raises an error for invalid response' do
         expect { subject }.to raise_error(Dry::Struct::Error)
       end

@@ -9,16 +9,13 @@ module SteamApi
         attribute :playtime_2weeks, Types::Integer
         attribute :playtime_forever, Types::Integer
         attribute :img_icon_url, Types::String
-        attribute :playtime_windows_forever, Types::Integer
-        attribute :playtime_mac_forever, Types::Integer
-        attribute :playtime_linux_forever, Types::Integer
       end
 
       attribute :response do
         attribute :total_count?, Types::Integer
         attribute :games?, Types::Strict::Array.of(
           InternalPlayerRecentGames
-        )
+        ).optional
       end
     end
   end

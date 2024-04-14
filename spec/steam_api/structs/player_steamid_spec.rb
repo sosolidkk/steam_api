@@ -4,46 +4,30 @@ RSpec.describe SteamApi::Structs::PlayerSteamId do
   subject { described_class.new(params) }
 
   describe '#initialize' do
-    let(:steamid) { 76561198160009756 }
-    let(:message) { 'Success' }
-    let(:success) { 1 }
-
-    context 'when the params are present' do
-      let(:params) do
-        {
-          response: {
-            steamid: steamid,
-            message: message,
-            success: success
-          }
+    let(:params) do
+      {
+        response: {
+          steamid: steam_id,
+          message: message,
+          success: success
         }
-      end
-
-      it { is_expected.to have_attributes(response: have_attributes(steamid: steamid)) }
-
-      it { is_expected.to have_attributes(response: have_attributes(message: message)) }
-
-      it { is_expected.to have_attributes(response: have_attributes(success: success)) }
+      }
     end
 
-    context 'when the params are not present' do
+    context 'when all params are present' do
+      let(:steam_id) { 76561198160009756 }
+      let(:message) { 'Success' }
+      let(:success) { 1 }
+
+      it { is_expected.to have_attributes(response: have_attributes(**params[:response])) }
+    end
+
+    context 'when some params are missing' do
+      let(:steam_id) { nil }
+      let(:message) { nil }
       let(:success) { 42 }
 
-      let(:params) do
-        {
-          response: {
-            steamid: nil,
-            message: nil,
-            success: success
-          }
-        }
-      end
-
-      it { is_expected.to have_attributes(response: have_attributes(steamid: nil)) }
-
-      it { is_expected.to have_attributes(response: have_attributes(message: nil)) }
-
-      it { is_expected.to have_attributes(response: have_attributes(success: success)) }
+      it { is_expected.to have_attributes(response: have_attributes(**params[:response])) }
     end
   end
 end

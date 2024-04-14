@@ -4,15 +4,17 @@ RSpec.describe SteamApi::Structs::PlayerLevel do
   subject { described_class.new(params) }
 
   describe '#initialize' do
-    context 'when the param is present' do
-      let(:player_level) { 50 }
-      let(:params) { { response: { player_level: player_level } } }
+    let(:params) { { response: response } }
 
-      it { is_expected.to have_attributes(response: have_attributes(player_level: player_level)) }
+    context 'when the params are present' do
+      let(:player_level) { 50 }
+      let(:response) { { player_level: player_level } }
+
+      it { is_expected.to have_attributes(response: have_attributes(**response)) }
     end
 
-    context 'when the param is not present' do
-      let(:params) { { response: {} } }
+    context 'when the params are missing' do
+      let(:response) { { } }
 
       it { is_expected.to have_attributes(response: have_attributes(player_level: nil)) }
     end
