@@ -17,8 +17,5 @@ vendor/bundle/
 # Specs
 spec/
 
-# CI
-.gitlab-ci.yml
-
 # Dev tools
 .rspec_status

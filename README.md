@@ -212,8 +212,8 @@ client.player_level.retrieve(76561198160009756)
 - Arguments
   - **appid**: The ID for the game you're requesting.
     - By default, the current implementation of the SteamApi supports multiple AppIDs at the same time. But this gem does not (yet) supports it.
-  - **filters (optional)**: The filters for the data you want to be fetched.
-    - Any key names except those listed under basic are acceptable as filter values. There are the keys returned when the basic filter is used:
+  - **filters (optional)**: The filters for the data you want to be fetched. For the complete filter listing please access the [StoreFrontAPI](https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI#appdetails) for appdetails endpoint.
+    - The filter `basic` returns the following keys:
       - `type`
       - `name`
       - `steam_appid`

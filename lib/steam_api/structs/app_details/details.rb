@@ -8,20 +8,20 @@ module SteamApi
         attribute :response do
           attribute :success, Types::Bool
           attribute :data do
-            attribute :type, Types::String
-            attribute :name, Types::String
-            attribute :required_age, Types::Integer
-            attribute :is_free, Types::Bool
-            attribute :dlc, Types::Array
-            attribute :detailed_description, Types::String
+            attribute? :type, Types::String
+            attribute? :name, Types::String
+            attribute? :required_age, Types::Coercible::Integer
+            attribute? :is_free, Types::Bool
+            attribute? :dlc, Types::Array.of(Types::Coercible::Integer)
+            attribute? :detailed_description, Types::String
             attribute? :about_the_game, Types::String
-            attribute :short_description, Types::String
-            attribute :supported_languages, Types::String
-            attribute :header_image, Types::String
-            attribute :website, Types::String
-            attribute :pc_requirements, SteamApi::Structs::AppDetails::Requirements
-            attribute :mac_requirements, SteamApi::Structs::AppDetails::Requirements
-            attribute :linux_requirements, SteamApi::Structs::AppDetails::Requirements
+            attribute? :short_description, Types::String
+            attribute? :supported_languages, Types::String
+            attribute? :header_image, Types::String
+            attribute? :website, Types::String
+            attribute? :pc_requirements, SteamApi::Structs::AppDetails::Requirements
+            attribute? :mac_requirements, SteamApi::Structs::AppDetails::Requirements
+            attribute? :linux_requirements, SteamApi::Structs::AppDetails::Requirements
             attribute? :developers, Types::Array.of(Types::Coercible::String)
             attribute? :publishers, Types::Array.of(Types::Coercible::String)
             attribute? :price_overview do
