@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "_script_helpers"
+
+include ScriptHelpers
+
+if __FILE__ == $0
+  print_message "📦 Installing Ruby gems via bundler..."
+  execute("gem install bundler") unless has_executable?("bundle")
+  execute("bundle check || bundle install")
+  print_message "✅ Setup completed successfully!"
+end

@@ -249,42 +249,30 @@ Optionally you can run it directly on your machine OS, this is specially useful 
 ### Requirements
 
 On your local development machine, you must have installed:
- - `docker` version 23.0.1 or newer
- - `docker-compose` version 2.16.0 or newer
- - `dip` version 7.5.0 or newer
+ - `ruby`: any version >= 3.0
 
 ### Initial setup
 
-[Install dip](https://github.com/bibendi/dip#installation) for your system.
-
-Run `bin/setup` to setup the system using Docker.
+Run `bin/setup` to setup the gem using bundler.
 
 ### Interactive console
 
-Launch a new interactive session on ruby with `dip irb` or a shell session with `dip sh`.
+Launch a new interactive session on ruby with `bin/console`.
 
 ### Running specs
 
-Execute all automated tests by running `dip rspec`.
+Execute all automated tests by running `bin/rspec`.
 
 ## Code quality
 
-We use the [Pronto](https://github.com/prontolabs/pronto) tool to run all linters and code quality tools, both in development and on CI.
-
-Tools
-
-- [Rubocop](https://github.com/prontolabs/pronto-rubocop): Ruby static code analyzer and formatter, based on the community Ruby style guide (via `pronto-rubocop`)
-- [Reek](https://github.com/prontolabs/pronto-reek): code smell detector for Ruby (via `pronto-reek`)
-- [Flay](https://github.com/prontolabs/pronto-flay): analyzes code for structural similarities (via `pronto-flay`)
-- [Fasterer](https://github.com/prontolabs/pronto-fasterer): performance checker and suggester (via `pronto-fasterer`)
-- [Brakeman](https://github.com/prontolabs/pronto-brakeman): static analysis security vulnerability scanner for Ruby on Rails applications (via `pronto-brakeman`)
+We use [standardrb](https://github.com/standardrb/standard) tool to run all linters and code quality tools, both in development and on CI.
 
 ### Analyzing the code
 
 To run these tools use:
 
 ```bash
-$ dip lint
+$ bin/lint
 ```
 
 ## Contributing

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ScriptHelpers
   def prefix_message(message) = "[ #{$PROGRAM_NAME} ] #{message}"
 
