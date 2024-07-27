@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# see the `provision:` section on `dip.yml` to see what it does
-dip provision

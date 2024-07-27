@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-docker-compose run --rm gem bundle exec pronto run -c origin/main
