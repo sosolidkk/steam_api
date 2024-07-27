@@ -14,7 +14,7 @@ module SteamApi
           end
 
           # The only possible values are: all, friend.
-          raise StandardError, ':relationship value not allowed' unless %w[all friend].include? params[:relationship]
+          raise StandardError, ":relationship value not allowed" unless %w[all friend].include? params[:relationship]
 
           new(params)
         end
@@ -22,19 +22,19 @@ module SteamApi
         # Returns the version value to create the request path
         # @return [String] the version of the request path
         def version
-          'v0001/'
+          "v0001/"
         end
 
         # Returns the interface value to create the request path
         # @return [String] the interface of the request path
         def interface
-          'ISteamUser/'
+          "ISteamUser/"
         end
 
         # Returns the API path value to create the request path
         # @return [String] the API path of the request path
         def path
-          'GetFriendList/'
+          "GetFriendList/"
         end
 
         # Returns the query params needed for the HTTP request

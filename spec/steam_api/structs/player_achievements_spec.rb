@@ -1,9 +1,9 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::PlayerAchievements do
   subject(:instance) { described_class.new(params) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     let(:params) do
       {
         playerstats: {
@@ -15,14 +15,14 @@ RSpec.describe SteamApi::Structs::PlayerAchievements do
       }
     end
 
-    context 'when the params are present' do
+    context "when the params are present" do
       let(:steam_id) { 76561198160009756 }
       let(:success) { true }
-      let(:game_name) { 'ELDEN RING' }
+      let(:game_name) { "ELDEN RING" }
       let(:achievements) do
         [
-          { apiname: "ACH00", achieved: 1, unlocktime: 1648763893 },
-          { apiname: "ACH01", achieved: 1, unlocktime: 1647725011 }
+          {apiname: "ACH00", achieved: 1, unlocktime: 1648763893},
+          {apiname: "ACH01", achieved: 1, unlocktime: 1647725011}
         ]
       end
 

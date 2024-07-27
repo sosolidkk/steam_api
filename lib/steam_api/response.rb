@@ -1,4 +1,4 @@
-require 'forwardable'
+require "forwardable"
 
 module SteamApi
   # Wraps the raw response received from the Api

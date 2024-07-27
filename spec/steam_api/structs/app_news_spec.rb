@@ -1,9 +1,9 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::AppNews do
   subject { described_class.new(params) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     let(:params) do
       {
         appnews: {
@@ -14,7 +14,7 @@ RSpec.describe SteamApi::Structs::AppNews do
       }
     end
 
-    context 'when the params are present' do
+    context "when the params are present" do
       let(:app_id) { 400 }
       let(:count) { 2 }
       let(:item) do

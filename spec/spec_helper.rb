@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'bundler/setup'
+require "bundler/setup"
 
-require 'simplecov'
+require "simplecov"
 SimpleCov.start
 
-require 'steam_api'
-require 'debug'
+require "steam_api"
+require "debug"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

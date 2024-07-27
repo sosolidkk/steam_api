@@ -1,12 +1,12 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::PlayerRecentGames do
   subject(:instance) { described_class.new(params) }
 
-  describe '#initialize' do
-    let(:params) { { response: { total_count: total_count, games: games } } }
+  describe "#initialize" do
+    let(:params) { {response: {total_count: total_count, games: games}} }
 
-    context 'when the params are present' do
+    context "when the params are present" do
       let(:total_count) { 10 }
       let(:games) do
         [
@@ -41,9 +41,9 @@ RSpec.describe SteamApi::Structs::PlayerRecentGames do
       end
     end
 
-    context 'when some params are missing' do
-      let(:total_count) { }
-      let(:games) { }
+    context "when some params are missing" do
+      let(:total_count) {}
+      let(:games) {}
 
       it { is_expected.to have_attributes(response: have_attributes(total_count: nil, games: nil)) }
     end

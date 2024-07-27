@@ -7,7 +7,7 @@ module SteamApi
         # @abstract
         # @return [String] the API path of the request path
         def path
-          raise NoMethodError, 'Override this method'
+          raise NoMethodError, "Override this method"
         end
 
         # Returns the HTTP method used by the request.
@@ -30,8 +30,8 @@ module SteamApi
         # @return [Hash]
         def query_params
           {
-            cc: 'US',
-            l: 'en'
+            cc: "US",
+            l: "en"
           }
         end
 

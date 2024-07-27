@@ -29,8 +29,8 @@ module SteamApi
   class Client
     extend ::Dry::Configurable
 
-    BASE_ENDPOINT = 'https://api.steampowered.com'
-    STOREFRONT_API_ENDPOINT = 'https://store.steampowered.com/api/'
+    BASE_ENDPOINT = "https://api.steampowered.com"
+    STOREFRONT_API_ENDPOINT = "https://store.steampowered.com/api/"
 
     setting :api_token
 

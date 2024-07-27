@@ -1,17 +1,17 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::PlayerFriends do
   subject(:instance) { described_class.new(params) }
 
-  describe '#initialize' do
-    let(:params) { { friendslist: friends_list } }
+  describe "#initialize" do
+    let(:params) { {friendslist: friends_list} }
 
-    context 'when the params are present' do
+    context "when the params are present" do
       let(:friends_list) do
         {
           friends: [
-            { steamid: "76561198010665131", relationship: "friend", friend_since: 1701205989 },
-            { steamid: "76561198027904893", relationship: "friend", friend_since: 1701205970 }
+            {steamid: "76561198010665131", relationship: "friend", friend_since: 1701205989},
+            {steamid: "76561198027904893", relationship: "friend", friend_since: 1701205970}
           ]
         }
       end

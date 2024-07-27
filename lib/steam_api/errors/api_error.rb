@@ -29,14 +29,19 @@ module SteamApi
 
     # status_code: 400
     class HttpBadRequest < ApiError; end
+
     # status_code: 401
     class HttpUnauthorized < ApiError; end
+
     # status_code: 403
     class HttpForbidden < ApiError; end
+
     # status_code: 404
     class HttpNotFound < ApiError; end
+
     # status_code: 408
     class HttpTimeout < ApiError; end
+
     # status_code: 500
     class HttpInternalServerError < ApiError; end
   end

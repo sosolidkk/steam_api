@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Errors::ApiError do
   let(:response) do
@@ -6,13 +6,13 @@ RSpec.describe SteamApi::Errors::ApiError do
       :response,
       status_code: 100,
       request: {}.to_json,
-      body: {message: 'error'}.to_json
+      body: {message: "error"}.to_json
     )
   end
 
   subject { described_class.new(response) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     let(:expected_message) do
       <<-MESSAGE.squish
         A request failed with the following status code: 100
@@ -20,7 +20,7 @@ RSpec.describe SteamApi::Errors::ApiError do
       MESSAGE
     end
 
-    it 'builds the error message with the response body content' do
+    it "builds the error message with the response body content" do
       expect(subject.message).to eql(expected_message)
       expect(subject.class).to eq(SteamApi::Errors::ApiError)
     end

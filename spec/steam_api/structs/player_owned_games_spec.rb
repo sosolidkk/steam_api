@@ -1,12 +1,12 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::PlayerOwnedGames do
   subject(:instance) { described_class.new(params) }
 
-  describe '#initialize' do
-    let(:params) { { response: { game_count: game_count, games: games } } }
+  describe "#initialize" do
+    let(:params) { {response: {game_count: game_count, games: games}} }
 
-    context 'when the params are present' do
+    context "when the params are present" do
       let(:game_count) { 333 }
       let(:games) do
         [
@@ -47,7 +47,7 @@ RSpec.describe SteamApi::Structs::PlayerOwnedGames do
       end
     end
 
-    context 'when some params are missing' do
+    context "when some params are missing" do
       let(:game_count) { 666 }
       let(:games) do
         [
@@ -59,13 +59,12 @@ RSpec.describe SteamApi::Structs::PlayerOwnedGames do
             playtime_linux_forever: 0,
             rtime_last_played: 0
           },
-          { appid: 620,
-            playtime_forever: 634,
-            playtime_windows_forever: 632,
-            playtime_mac_forever: 0,
-            playtime_linux_forever: 1,
-            rtime_last_played: 1657393559
-          }
+          {appid: 620,
+           playtime_forever: 634,
+           playtime_windows_forever: 632,
+           playtime_mac_forever: 0,
+           playtime_linux_forever: 1,
+           rtime_last_played: 1657393559}
         ]
       end
 

@@ -12,7 +12,7 @@ module SteamApi
       #   Defaults to en
       # @return [SteamApi::Structs::AppDetails::Details] instance with the
       #   app details.
-      def retrieve(appid:, filters: [], country_code: 'US', locale: 'en')
+      def retrieve(appid:, filters: [], country_code: "US", locale: "en")
         build_request_and_run(
           SteamApi::Structs::Requests::GetAppDetails,
           SteamApi::Structs::AppDetails::Details,
