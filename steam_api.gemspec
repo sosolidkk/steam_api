@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["João Pedro"]
   spec.email = ["pedrochaveslimas3@gmail.com"]
 
-  spec.summary = "A ruby client to fetch from the public Steam web API"
-  spec.homepage = "https://rubygems.org/gems/"
+  spec.summary = "A ruby client to fetch from the public Steam Web API"
+  spec.homepage = "https://github.com/sosolidkk/steam_api"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0"
 
@@ -40,4 +40,7 @@ Gem::Specification.new do |spec|
   # cleanly encapsulating handling logic.
   # See [https://rubygems.org/gems/typhoeus]
   spec.add_dependency "typhoeus", "~> 1.4"
+
+  # For more information and examples about making a new gem, check out our
+  # guide at: https://bundler.io/guides/creating_gem.html
 end

@@ -70,7 +70,6 @@ module SteamApi
       @player_summaries ||= SteamApi::Requestors::PlayerSummaries.new(self)
     end
 
-    # Return the client config values
     def config
       self.class.config
     end
