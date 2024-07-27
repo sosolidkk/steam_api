@@ -1,9 +1,9 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::AppDetails::Requirements do
   subject { described_class.new(params) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     let(:params) do
       {
         minimum: minimum,
@@ -11,14 +11,14 @@ RSpec.describe SteamApi::Structs::AppDetails::Requirements do
       }
     end
 
-    context 'when the params are present' do
-      let(:minimum) { 'Minimum: OS, RAM' }
-      let(:recommended) { 'Recommended: OS, RAM, HD' }
+    context "when the params are present" do
+      let(:minimum) { "Minimum: OS, RAM" }
+      let(:recommended) { "Recommended: OS, RAM, HD" }
 
       it { is_expected.to have_attributes(**params) }
     end
 
-    context 'when the params are missing' do
+    context "when the params are missing" do
       let(:params) { {} }
 
       it { is_expected.to have_attributes(minimum: nil, recommended: nil) }

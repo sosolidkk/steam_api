@@ -73,7 +73,7 @@ module SteamApi
 
         def self.build_from_response(json_response)
           outer_key = json_response.keys.first
-          new(**{appid: outer_key.to_s, response: json_response[outer_key]})
+          new(appid: outer_key.to_s, response: json_response[outer_key])
         end
       end
     end

@@ -1,9 +1,9 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::AppNew do
   subject { described_class.new(params) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     let(:params) do
       {
         gid: "6300039510132446959",
@@ -21,7 +21,7 @@ RSpec.describe SteamApi::Structs::AppNew do
       }
     end
 
-    context 'when the params are present' do
+    context "when the params are present" do
       it { is_expected.to have_attributes(**params) }
     end
   end

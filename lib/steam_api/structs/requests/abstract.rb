@@ -7,21 +7,21 @@ module SteamApi
         # @abstract
         # @return [String] the version of the request path
         def version
-          raise NoMethodError, 'Override this method'
+          raise NoMethodError, "Override this method"
         end
 
         # Returns the interface value to create the request path
         # @abstract
         # @return [String] the interface of the request path
         def interface
-          raise NoMethodError, 'Override this method'
+          raise NoMethodError, "Override this method"
         end
 
         # Returns the API path value to create the request path
         # @abstract
         # @return [String] the API path of the request path
         def path
-          raise NoMethodError, 'Override this method'
+          raise NoMethodError, "Override this method"
         end
 
         # Returns the HTTP method used by the request.

@@ -21,7 +21,7 @@ module SteamApi
         # Returns the API path value to create the request path
         # @return [String] the API path of the request path
         def path
-          'appdetails/'
+          "appdetails/"
         end
 
         # Returns the query params needed for the HTTP request
@@ -30,7 +30,7 @@ module SteamApi
           super.merge(
             {
               appids: appid,
-              filters: filters.join(','),
+              filters: filters.join(","),
               cc: cc,
               l: l
             }

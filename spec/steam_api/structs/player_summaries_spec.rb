@@ -1,12 +1,12 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::PlayerSummaries do
   subject(:instance) { described_class.new(params) }
 
-  describe '#initialize' do
-    let(:params) { { response: { players: players } } }
+  describe "#initialize" do
+    let(:params) { {response: {players: players}} }
 
-    context 'when the params are present' do
+    context "when the params are present" do
       let(:players) do
         [
           {

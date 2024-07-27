@@ -1,7 +1,7 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Request do
   subject(:instance) { described_class }
 
-  pending 'TODO'
+  pending "TODO"
 end

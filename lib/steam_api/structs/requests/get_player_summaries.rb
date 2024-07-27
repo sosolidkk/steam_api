@@ -8,7 +8,7 @@ module SteamApi
         # @params [Hash] params - The hash params.
         # @return an instance of the Struct
         def self.build_from_params(params)
-          raise StandardError, ':steamids are missing' unless params.key?(:steamids)
+          raise StandardError, ":steamids are missing" unless params.key?(:steamids)
 
           new(params)
         end
@@ -16,19 +16,19 @@ module SteamApi
         # Returns the version value to create the request path
         # @return [String] the version of the request path
         def version
-          'v0002/'
+          "v0002/"
         end
 
         # Returns the interface value to create the request path
         # @return [String] the interface of the request path
         def interface
-          'ISteamUser/'
+          "ISteamUser/"
         end
 
         # Returns the API path value to create the request path
         # @return [String] the API path of the request path
         def path
-          'GetPlayerSummaries/'
+          "GetPlayerSummaries/"
         end
 
         # Returns the query params needed for the HTTP request
@@ -37,7 +37,7 @@ module SteamApi
           # I need to join the steamids because they wont accept
           # multiple equal keys with different values on query params
           {
-            steamids: steamids.join(',')
+            steamids: steamids.join(",")
           }
         end
 

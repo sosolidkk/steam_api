@@ -1,9 +1,9 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe SteamApi::Structs::PlayerSummary do
   subject(:instance) { described_class.new(params) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     let(:params) do
       {
         steamid: "76561198063576425",
@@ -20,7 +20,7 @@ RSpec.describe SteamApi::Structs::PlayerSummary do
       }
     end
 
-    context 'when the params are present' do
+    context "when the params are present" do
       it { is_expected.to have_attributes(**params) }
     end
   end
