@@ -4,8 +4,8 @@ module SteamApi
     # player for a given app.
     class PlayerAchievements < Base
       # Returns a list of achievements for a user by app id.
-      # @param [Integer] appid - The Steam app' id
-      # @param [Integer] steamid - The Steam user id
+      # @param [Integer] appid The Steam app id
+      # @param [Integer] steamid The Steam user id
       # @return [SteamApi::Structs::PlayerAchievements] instance with the
       #   player summary details.
       def retrieve(appid, steamid)

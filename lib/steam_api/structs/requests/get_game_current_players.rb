@@ -5,7 +5,7 @@ module SteamApi
         attribute :appid, Types::Integer
 
         # Build the struct through the received params.
-        # @params [Hash] params - The hash params.
+        # @params [Hash] params The hash params.
         # @return an instance of the Struct
         def self.build_from_params(params)
           raise StandardError, ":appid is missing" unless params.key?(:appid)

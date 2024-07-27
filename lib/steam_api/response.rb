@@ -10,9 +10,9 @@ module SteamApi
 
     # Initialize a new instance
     # @param [Typhoeus::Response] raw_response
-    # @param [SteamApi::Structs::Base] response_struct - The struct necessary to
+    # @param [SteamApi::Structs::Base] response_struct The struct necessary to
     #   build the response received from Api
-    # @param [SteamApi::Request] request - The wrapper Request class
+    # @param [SteamApi::Request] request The wrapper Request class
     def initialize(raw_response:, response_struct:, request:)
       @raw_response = raw_response
       @response_struct = response_struct

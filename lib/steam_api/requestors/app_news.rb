@@ -4,9 +4,9 @@ module SteamApi
     # app in the Steam Web Api.
     class AppNews < Base
       # Get on the Api one or more news of an App in the Steam.
-      # @param [Integer] appid - The Steam app' id
-      # @param [Integer] count - The number of wanted news
-      # @param [Integer] maxlength - The max length of the news content
+      # @param [Integer] appid The Steam app id
+      # @param [Integer] count The number of wanted news
+      # @param [Integer] maxlength The max length of the news content
       # @return [SteamApi::Structs::AppNews] instance with the
       #   player summary details.
       def retrieve(appid, count, maxlength = 300)

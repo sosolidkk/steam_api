@@ -4,8 +4,8 @@ module SteamApi
     # friend list in the Steam Web Api.
     class PlayerFriends < Base
       # Get an User complete friend list, if public.
-      # @param [Integer] steamid - The Steam user id
-      # @param [String] relationship - Relationship filter. Possibles values: 'all', 'friend1'.
+      # @param [Integer] steamid The Steam user id
+      # @param [String] relationship Relationship filter. Possibles values: 'all', 'friend'.
       # @return [SteamApi::Structs::PlayerFriends] instance with the
       #   player friends list.
       def retrieve(steamid, relationship = "all")

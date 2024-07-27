@@ -6,7 +6,7 @@ module SteamApi
         attribute :relationship, Types::String
 
         # Build the struct through the received params.
-        # @params [Hash] params - The hash params.
+        # @params [Hash] params The hash params.
         # @return an instance of the Struct
         def self.build_from_params(params)
           %i[steamid relationship].each do |attrib|

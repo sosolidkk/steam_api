@@ -4,7 +4,7 @@ module SteamApi
     # for a game in the Steam Web Api.
     class GameCurrentPlayers < Base
       # Get the number of current players for a game.
-      # @param [Integer] appid - The Steam app' id
+      # @param [Integer] appid The Steam app id
       # @return [SteamApi::Structs::GameCurrentPlayers] instance with the
       #   game current players count.
       def retrieve(appid)

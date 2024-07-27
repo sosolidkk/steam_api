@@ -4,9 +4,9 @@ module SteamApi
     # the player owned games, if public.
     class PlayerOwnedGames < Base
       # Returns a list of all games owned by the user.
-      # @param [Integer] steamid - The Steam user id
-      # @param [Boolean] include_appinfo - Flag to include all game related information
-      # @param [Boolean] include_played_free_games - Flag to include free games
+      # @param [Integer] steamid The Steam user id
+      # @param [Boolean] include_appinfo Flag to include all game related information
+      # @param [Boolean] include_played_free_games Flag to include free games
       # @return [SteamApi::Structs::PlayerOwnedGames] instance with the
       #   player owned games details.
       def retrieve(steamid, include_appinfo: false, include_played_free_games: false)

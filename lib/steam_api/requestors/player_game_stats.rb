@@ -4,8 +4,8 @@ module SteamApi
     # player for a given game/appid.
     class PlayerGameStats < Base
       # Returns a list of stats for a user for a given game/appid.
-      # @param [Integer] appid - The Steam app' id
-      # @param [Integer] steamid - The Steam user id
+      # @param [Integer] appid The Steam app id
+      # @param [Integer] steamid The Steam user id
       # @return [SteamApi::Structs::PlayerGameStats] instance with the
       #   player summary details.
       def retrieve(appid, steamid)
