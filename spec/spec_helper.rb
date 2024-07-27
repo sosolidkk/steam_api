@@ -6,7 +6,7 @@ require 'simplecov'
 SimpleCov.start
 
 require 'steam_api'
-require 'byebug'
+require 'debug'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

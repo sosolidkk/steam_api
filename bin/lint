@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require_relative "_script_helpers"
+
+include ScriptHelpers
+
+# this will only run if the script was called directly, not loaded or required
+if __FILE__ == $0
+  print_message("🔍 Starting linting process...")
+
+  print_message("🔍 Checking for StandardRB gem...")
+  execute("bin/standardrb --verbose-version")
+
+  print_message("🔍 Running StandardRB to check code style and best practices...")
+  execute("bin/standardrb --no-fix")
+
+  print_message("✅ Linting completed successfully! No issues found. Great job! 🚀")
+end

@@ -2,26 +2,35 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in steam-interface.gemspec
+ruby file: '.ruby-version'
+
+# Specify your gem's dependencies in steam_api.gemspec
 gemspec
 
-gem 'rake', '~> 13.0'
+group :development, :test do
+  # Ruby's bikeshed-proof linter and formatter.
+  # See: [https://rubygems.org/gems/standard]
+  gem 'standard', '~> 1.3'
 
-gem 'byebug', '~> 11.1', '>= 11.1.3', platforms: %i[mri mingw x64_mingw]
-gem 'rspec', '~> 3.0'
-gem 'simplecov', require: false
-gem 'vcr', '~> 3.0', '>= 3.0.1', require: false
-gem 'webmock', '~> 3.4', require: false
+  # Debugging tool for Ruby.
+  # See: [https://rubygems.org/gems/debug]
+  gem 'debug', '~> 1.9'
 
-gem 'rubocop', '~> 1.21'
+  # A Ruby gem to test Ruby code.
+  # See: [https://github.com/rspec]
+  gem 'rspec', '~> 3.4'
 
-gem 'faraday-retry', '~> 2.0.0'
+  # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, and
+  # accurate tests [https://rubygems.org/gems/vcr]
+  gem 'vcr', '~> 6.2'
 
-group :development do
-  gem 'pronto-brakeman', '~> 0.11.0', require: false
-  gem 'pronto-fasterer', '~> 0.11.0', require: false
-  gem 'pronto-flay', '~> 0.11.0', require: false
-  gem 'pronto-reek', '~> 0.11.0', require: false
-  gem 'pronto-rubocop', '~> 0.11.0', require: false
-  gem 'pronto', '~> 0.11.0'
+  # Library for stubbing and setting expectations on HTTP requests in Ruby.
+  # See: [https://rubygems.org/gems/webmock]
+  gem 'webmock', '~> 3.23'
+end
+
+group :test do
+  # A code coverage analysis tool for Ruby.
+  # See: [https://rubygems.org/gems/simplecov]
+  gem 'simplecov', '~> 0.22', require: false
 end
