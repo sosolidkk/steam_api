@@ -35,7 +35,7 @@ module SteamApi
     # returns an empty hash
     # @return [Hash]
     def to_h
-      ::JSON.parse(raw_response.body.to_s).deep_symbolize_keys
+      ::JSON.parse(raw_response.body.to_s, symbolize_names: true)
     rescue JSON::ParserError
       {}
     end

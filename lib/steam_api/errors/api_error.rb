@@ -20,7 +20,7 @@ module SteamApi
       attr_accessor :http_status_code, :response
 
       def build_description_message
-        <<~MESSAGE.squish
+        <<~MESSAGE.split.join(" ")
           A request failed with the following status code: #{http_status_code}
           and body: #{response.body}
         MESSAGE

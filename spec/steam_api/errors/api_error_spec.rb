@@ -14,7 +14,7 @@ RSpec.describe SteamApi::Errors::ApiError do
 
   describe "#initialize" do
     let(:expected_message) do
-      <<-MESSAGE.squish
+      <<-MESSAGE.split.join(" ")
         A request failed with the following status code: 100
         and body: {"message":"error"}
       MESSAGE

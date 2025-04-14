@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "active_support/all"
-
 require "dry-configurable"
 require "dry-struct"
 require "singleton"

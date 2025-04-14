@@ -26,10 +26,6 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # A toolkit of support libraries and Ruby core
-  # extensions extracted from the Rails framework.
-  # See: [https://rubygems.org/gems/activesupport]
-  spec.add_dependency "activesupport"
   # A mixin to add configuration functionality to your classes.
   # See: [https://rubygems.org/gems/dry-configurable]
   spec.add_dependency "dry-configurable", "~> 1.1.0"
